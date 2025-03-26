@@ -1,0 +1,31 @@
+# Remove the [package] section and its dependencies
+# [package]
+# name = "rzn-broser-control"
+# version = "0.1.0"
+# edition = "2024" # Note: "2024" edition is not stable yet, use "2021"
+#
+# [dependencies]
+# serde = { version = "1.0", features = ["derive"] }
+# serde_json = "1.0"
+# urlencoding = "2.1"
+# ctrlc = "3.2"
+# chrono = "0.4"
+# libc = "0.2"
+
+[workspace]
+resolver = "2" # Good practice to specify resolver version
+# Use "2021" edition until "2024" is stable
+# edition = "2021" # You can optionally set a default edition for the workspace
+
+members = [
+    "rzn_broker",      # Path to the broker crate
+    "example_app",     # Path to the example app crate
+    # Do NOT add "extension" here unless it becomes a Rust crate
+]
+
+# Optional: Define shared profile settings if desired
+# [profile.release]
+# lto = true
+# codegen-units = 1
+# strip = true
+# opt-level = "z" # Optimize for size

@@ -1,0 +1,9 @@
+{
+    "name": "rzn-browser-control",
+    "version": "1.0.0",
+    "description": "Chrome extension for browser automation",
+    "scripts": {
+        "build": "mkdir -p dist && cp src/* dist/",
+        "clean": "rm -rf dist"
+    }
+}

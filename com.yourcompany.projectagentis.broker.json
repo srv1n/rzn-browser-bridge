@@ -1,0 +1,9 @@
+{
+    "name": "com.yourcompany.projectagentis.broker",
+    "description": "Project Agentis Browser Control Broker",
+    "path": "/Users/sarav/Downloads/play/rzn-broser-control/target/release/rzn_broker",
+    "type": "stdio",
+    "allowed_origins": [
+        "chrome-extension://aolkkfohngjikpnkhobcaionpkipaple/"
+    ]
+} 

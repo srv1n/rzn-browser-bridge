@@ -1,0 +1,13 @@
+node_modules/
+dist/
+
+com.example.rustapp.json
+google_search.json
+.DS_Store
+
+.cursor
+.cursor/*
+
+google.md
+claude.md
+target/

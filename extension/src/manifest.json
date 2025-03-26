@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Browser Automation Extension",
+    "version": "1.0.0",
+    "description": "Chrome extension for browser automation with Rust backend",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "nativeMessaging",
+        "scripting",
+        "tabs",
+        "activeTab",
+        "storage",
+        "cookies"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+}
