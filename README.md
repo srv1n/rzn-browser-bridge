@@ -2,6 +2,21 @@
 
 👋 Welcome to Rzn:Browser Bridge! This system demonstrates an architecture for browser automation using a Chrome extension that communicates with local Rust applications. By leveraging Chrome's Native Messaging and inter-process communication, we've created a flexible and maintainable solution for browser control tasks.
 
+## Using This Template
+
+This repository is set up as a GitHub template. To use it:
+
+1. Click the "Use this template" button at the top of the repository page
+2. Choose a name for your new repository
+3. Select the owner (your account or an organization)
+4. Choose public or private visibility
+5. Click "Create repository from template"
+
+After creating your repository, you'll need to:
+- Update the project name in the README and LICENSE files
+- Update the extension ID in the manifest files (see Setup Instructions)
+- Customize the application and extension logic for your specific needs
+
 ## Table of Contents
 
 * [Overview](#overview)
