@@ -164,3 +164,7 @@ The message flow looks like this:
 * **Packaging**: Create installer scripts for easier distribution
 * **Security Enhancements**: Add message validation and permission controls
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
