@@ -16,6 +16,8 @@ After creating your repository, you'll need to:
 - Update the project name in the README and LICENSE files
 - Update the extension ID in the manifest files (see Setup Instructions)
 - Customize the application and extension logic for your specific needs
+- Review the extension's package.json and adjust dependencies if needed
+- Consider updating the broker name in the manifest to match your project name
 
 ## Table of Contents
 
@@ -103,6 +105,7 @@ The message flow looks like this:
 ### Prerequisites
 
 * **Rust & Cargo**: [Install the Rust toolchain](https://www.rust-lang.org/tools/install)
+* **Node.js & npm**: Required to build the Chrome extension
 * **Google Chrome**: Or any Chromium-based browser supporting Native Messaging
 
 ### Installation Steps
@@ -113,28 +116,33 @@ The message flow looks like this:
    cd <your-repo-directory>
    ```
 
-2. **❗ IMPORTANT: Update Extension ID ❗**
-   * Load the extension in Chrome's developer mode (see step 4)
-   * Find your extension's ID in `chrome://extensions`
-   * Open `com.yourcompany.projectagentis.broker.json`
-   * Replace `"REPLACE_WITH_YOUR_EXTENSION_ID"` with your actual extension ID in the `allowed_origins` field
-
-3. **Run the Setup Script**
+2. **Run the Setup Script**
    ```bash
    chmod +x setup.sh
    ./setup.sh
    ```
    This script:
+   * Installs Node.js dependencies for the extension
+   * Builds the Chrome extension
    * Builds the Rust applications in release mode
    * Determines the correct Native Messaging Host directory for your OS
    * Creates and installs the manifest file with the correct path to the broker executable
 
-4. **Load the Extension**
+3. **Load the Extension**
    * Go to `chrome://extensions` in Chrome
    * Enable "Developer mode" (toggle in the top-right)
    * Click "Load unpacked"
-   * Select the `extension` directory from this project
-   * Ensure the extension is enabled
+   * Select the `extension/dist` directory (created during setup)
+   * Note your extension's ID shown on the card
+
+4. **Update the Native Messaging Host Manifest**
+   * Find your extension's ID in `chrome://extensions`
+   * Edit the manifest file at the location shown in the setup script output
+   * Replace `"REPLACE_WITH_YOUR_EXTENSION_ID"` with your actual extension ID in the `allowed_origins` field
+
+5. **Verify Extension Installation**
+   * The extension icon should appear in your browser toolbar
+   * If it doesn't appear automatically, you may need to pin it from the extensions menu
 
 ## Trying It Out
 
